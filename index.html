@@ -1,33 +1,58 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>OpenWeatherMap Api</title>
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
-  <!-- <div class="main">
-    <div class="header">
-      <h1>OpenWeatherMap API</h1>
-      <p>Enter any city name in the input box below to get the data</p>
-    </div> -->
-  
-    <div class="input">
-      <input type="text" placeholder="Enter the city" class="input_text">
-      <input type="submit" value="Submit" class="submit">
+<html>
+    <head>
+        <title>Weather App</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <link rel="stylesheet" href="style.css">
+        <script src="app.js"></script>
+    </head>
+    <body>
+    <center>
+    <div id="topbar">WeatherAPP<span id="searchicon">🔍</span></div>
+    
+    <div id="searchbox">
+        <input type="text" id="search" placeholder="Enter City Name">
+        <button>Search</button>
     </div>
-  </div>
-
-  <div class="container">
-    <div class="card">
-      <h1 class="name" id="name"></h1>
-      <p class="temp"></p>
-      <p class="clouds"></p>
-      <p class="desc"></p>
-    </div>
-  </div>
-<script src="app.js"></script>
-</body>
+                    <div id="loadingbox">
+                        <div id="loading"></div>
+        </div>
+        <div id="mainbody">
+            <img>
+            <span id="city"></span>
+            <br /><br /><br /><br />
+            <span id="temp"></span>
+            <span id="cond">&nbsp;</span>
+            <br /><br /><br />
+            <center>
+            <div id="more">
+            <span id="label">Chance of Rain: </span><span id="chanceofrain">&nbsp;</span>
+            </div>
+            <div id="more">
+            <span id="label">Feel Like: </span><span id="feel">&nbsp;</span>
+            </div>
+            
+            <div id="more">
+            <span id="label">Humidity: </span><span id="humidity">&nbsp;</span>
+            </div>
+            <div id="more">
+            <span id="label">Wind: </span><span id="wind">&nbsp;</span>
+            </div>
+            <div id="more">
+            <span id="label">Direction: </span><span id="direction">&nbsp;</span>
+            </div>
+            <span>Last Updated: </span><span id="update">&nbsp;</span>
+            </center>
+        </div>
+        <br />
+        <div id="forecasttable">
+            <h2 id="forecastlabel"></h2>
+        </div>
+        </center>
+        <div id='footer'>
+            Made By Somesh
+        </div>
+    </body>
 </html>
