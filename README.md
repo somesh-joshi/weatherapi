@@ -1,1 +1,2 @@
-plz run that file in server port
+#Weather app 
+weatherapp using API
