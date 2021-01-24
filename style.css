@@ -1,64 +1,205 @@
-*{
-  margin:0;
-  padding: 0;
-  box-sizing: border-box;
+@import url('https://fonts.googleapis.com/css2?family=Zilla+Slab&display=swap');
+body {
+    font-family: 'Zilla Slab', sans-serif;
+    background: linear-gradient(90deg, rgba(245,116,54,1) 24%, rgba(238,168,38,1) 94%);
 }
 
-body{
-  font-family: "Nunito",sans-serif;
-  background: #f8f8f8;
+input, button {
+    font-family: 'Zilla Slab', sans-serif;
+    font-weight: bold;
+    font-size: 16px;
+    color: white;
 }
 
-.input{
-  text-align: center;
-  margin: 100px auto;
+#topbar, #searchbox, #more, #forecastlabel, #forecast #date, #footer {
+    background-color: #373737;
+    color: white;
 }
 
-input[type="submit"]{
-  padding: 15px 30px;
-  background: #e7e7e7;
-  border: none;
-  border-radius: 1px;
-  font-family: "Nunito",sans-serif;
-  font-weight:bold;
-  font-size: 20px;
+#topbar {
+    font-size: 25px;
+    font-weight: bold;
+    color: white;
+    padding: 8px;
 }
 
-.input input[type="text"]{
-  width: 600px;
-  height: 55px;
-  padding: 5px 10px;
-  background: #e7e7e7;
-  border: none;
-  border-radius: 1px;
-  font-family: "Nunito",sans-serif;
-  font-weight:bold;
-  font-size: 20px;
+#searchbox {
+    padding: 10px;
+    display: none;
 }
 
-.card{
-  width: 50%;
-  background: #e7e7e7;
-  height: 40vh;
-  margin: 50px auto;
-  border-radius: 2px;
+#searchbox input {
+    height: 30px;
+    color: #373737;
+    width: 200px;
 }
 
-
-.close{
-  float: right;
-  margin-top: -2px;
-  cursor: pointer;
-  margin-right: 20px;
+#searchbox button {
+    height: 31px;
+    background-color: #f05e23;
+    border: 2px solid #f05e23;
+    width: 80px;
 }
 
-.card h1{
-  padding: 5px 0;
-  text-align: center;
+#topbar #searchicon {
+    float: right;
 }
 
-.card p{
-  text-align: center;
-  margin:40px 0;
-  font-size:20px;
+#mainbody {
+    color: white;
+    width: 85%;
+    text-align: center;
+    animation: appear 1s 1;
+}
+
+#forecast {
+    width: 85%;
+    height: 350px;
+    border: 1.5px solid white;
+    color: white;
+    animation: forecast 1s 1;
+    border-radius: 10px;
+}
+
+#city {
+    font-size: 40px;
+    text-align: left;
+    padding-top: 7px;
+    padding-left: 10px;
+}
+
+#mainbody img {
+    float: right;
+}
+
+#temp {
+    float: right;
+    font-size: 25px;
+    padding-right: 2px;
+    font-weight: bold;
+}
+#cond {
+    float: left;
+    font-size: 18px;
+    padding-left: 5px;
+}
+
+#more {
+    width: 83%;
+    padding: 5px;
+    margin: 5px;
+    height: 35px;
+    border-radius: 8px;
+    font-size: 17px;
+}
+
+#more #label {
+    float: left;
+    padding-left: 5px;
+}
+
+#wind {
+    text-align: right;
+}
+
+#forecast img {
+    height: 45px;
+    width: 45px;
+    float: left;
+}
+
+#forecast #date {
+    color: white;
+    font-size: 24px;
+    padding: 5px;
+    border-radius: 6px;
+    padding-top: 0px;
+}
+
+#forecast #avgtemp {
+    float: right;
+    padding-top: 3px;
+    font-size: 23px;
+}
+
+#forecast #summary {
+    font-size: 20px;
+    padding-bottom: 10px;
+}
+
+#wind, #direction, #humidity, #feel, #avghumidity, #rainchance, #sunrise, #sunset, #moonrise, #moonset, #chanceofrain {
+    float: right;
+}
+
+#forecastlabel {
+    color: white;
+    padding: 5px;
+}
+
+#forecast #top {
+    height: 45px;
+    padding: 5px;
+}
+
+#footer {
+   position: fixed;
+   left: 0;
+   bottom: 0;
+   width: 100%;
+   font-size: 18px;
+   background-color: #373737;
+   color: white;
+   text-align: center;
+   padding: 6px;
+}
+
+#loadingbox {
+    margin-top: 50%;
+}
+
+#loading {
+  display: inline-block;
+  width: 80px;
+  height: 80px;
+}
+
+#loading:after {
+  content: " ";
+  display: block;
+  width: 64px;
+  height: 64px;
+  margin: 8px;
+  border-radius: 50%;
+  border: 6px solid #fff;
+  border-color: #fff transparent #fff transparent;
+  animation: loading 1.2s linear infinite;
+}
+@keyframes loading {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes appear {
+    from {
+        width: 0%;
+    }
+    to {
+    
+    width: 85%;
+    }
+}
+
+@keyframes forecast {
+    from {
+        height: 0px;
+        width: 0%;
+    }
+    to {
+        height: 350px;
+        width: 85%;
+    }
 }
